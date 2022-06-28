@@ -20,6 +20,9 @@ export default
                 searchText: "",
             };
         },
+        methods: {
+
+        }
     }
 
 

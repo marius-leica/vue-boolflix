@@ -18,7 +18,6 @@ export default {
     TheHeader,
     TheMain,
   },
-
   data() {
     return {
       searchText: "",
@@ -27,10 +26,10 @@ export default {
   methods: {
     search(searchText) {
       this.searchText = searchText;
-
     },
-  },
 
+
+  }
 };
 </script>
 
