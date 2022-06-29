@@ -32,6 +32,7 @@ export default {
         return {
             moviesList: [],
             seriesList: [],
+            searchText: "",
         };
     },
 
@@ -51,7 +52,11 @@ export default {
                 }).catch(() => {
                     this.moviesList = [];
                 });
-        }
+        },
+        onSearchChange(searchText) {
+            this.searchText = this.userInput;
+            this.searchMovies();
+        },
     },
     mounted() {
         this.searchMovies();
