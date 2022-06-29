@@ -21,7 +21,7 @@ export default {
         LangFlag,
     },
     computed: {
-        movieTitle() {
+        movieTitle(movie) {
             if (movie.title) {
                 return movie.title;
             } return movie.name;
