@@ -9,7 +9,32 @@
             </span></div>
         <div>{{ movie.original_language }}</div>
         <div>{{ starGaverate }}</div>
-        <div></div>
+        <div v-if="starGaverate === 1">
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <div v-if="starGaverate === 2">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <div v-if="starGaverate === 3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <div v-if="starGaverate === 4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <div v-if="starGaverate === 5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+
     </div>
 </template>
 
@@ -46,5 +71,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.fa-solid {
+    color: #ffc107;
+}
 </style>
