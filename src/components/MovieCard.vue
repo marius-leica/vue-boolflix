@@ -4,7 +4,7 @@
         <div>{{ movie.title }} <span>
                 <lang-flag :iso="movie.original_language" squared="false" />
             </span></div>
-        <div>{{ movie.original_title }}</div>
+        <div>{{ movieTitle }}</div>
         <div>{{ movie.original_language }}</div>
         <div>{{ movie.vote_average }}</div>
     </div>
@@ -19,6 +19,14 @@ export default {
     },
     components: {
         LangFlag,
+    },
+    computed: {
+        movieTitle() {
+            if (movie.title) {
+                return movie.title;
+            } return movie.name;
+
+        }
     },
 }
 </script>
