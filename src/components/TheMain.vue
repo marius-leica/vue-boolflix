@@ -1,13 +1,9 @@
 <template>
     <div>
         <div id="moviesList">
-            <ul>
-                <li class="border" v-for="movie in moviesList" :key="movie.id">
-                    <div>{{ movie.title }}</div>
-                    <div>{{ movie.original_title }}</div>
-                    <div>{{ movie.original_language }}</div>
-                    <div>{{ movie.vote_average }}</div>
-
+            <ul class="list-group">
+                <li class="list-group-item" v-for="movie in moviesList" :key="movie.id">
+                    <MovieCard :movie="movie"></MovieCard>
 
                 </li>
             </ul>
@@ -22,11 +18,11 @@
 
 <script>
 import axios from "axios";
-
+import MovieCard from "./MovieCard.vue";
 
 export default {
     props: {
-        userInput: String
+        userInput: String,
     },
     data() {
         return {
@@ -35,33 +31,35 @@ export default {
             searchText: "",
         };
     },
-
     methods: {
         searchMovies() {
-            axios.get("https://api.themoviedb.org/3/search/movie", {
-                params: {
-                    api_key: "66da9c9715a8aa6ea7123977e1274068",
-                    query: this.userInput,
-                    language: "it-IT",
-                },
-
-            })
+            axios
+                .get("https://api.themoviedb.org/3/search/movie", {
+                    params: {
+                        api_key: "66da9c9715a8aa6ea7123977e1274068",
+                        query: this.userInput,
+                        language: "it-IT",
+                    },
+                })
                 .then((response) => {
                     console.log(response.data.results);
                     this.moviesList = response.data.results;
-                }).catch(() => {
-                    this.moviesList = [];
                 });
+            // .catch(() => {
+            //   this.moviesList = [];
+            // });
         },
-        onSearchChange(searchText) {
+        onSearchChange() {
             this.searchText = this.userInput;
             this.searchMovies();
         },
     },
-    mounted() {
-        this.searchMovies();
+    watch: {
+        userInput() {
+            this.onSearchChange();
+        },
     },
-
+    components: { MovieCard }
 };
 </script>
 

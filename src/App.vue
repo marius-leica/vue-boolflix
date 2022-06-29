@@ -3,7 +3,6 @@
     <TheHeader @searchChanged="search"></TheHeader>
 
     <TheMain :userInput="searchText"></TheMain>
-
   </div>
 </template>
 
@@ -27,12 +26,10 @@ export default {
     search(searchText) {
       this.searchText = searchText;
     },
-
-
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "assets/scss/main.scss";
+@import "assets/scss/main";
 </style>
