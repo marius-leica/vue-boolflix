@@ -8,7 +8,8 @@
                 <lang-flag :iso="movie.original_language" squared="false" />
             </span></div>
         <div>{{ movie.original_language }}</div>
-        <div>{{ movie.vote_average }}</div>
+        <div>{{ starGaverate }}</div>
+        <div></div>
     </div>
 </template>
 
@@ -34,7 +35,13 @@ export default {
                 return this.movie.title;
             } return this.movie.name;
 
-        }
+        },
+        starGaverate() {
+            return Math.round(this.movie.vote_average / 2);
+        },
+    },
+    methods: {
+
     },
 }
 </script>
