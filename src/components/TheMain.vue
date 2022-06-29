@@ -3,6 +3,14 @@
         <div id="moviesList">
             <ul class="list-group">
                 <li class="list-group-item" v-for="movie in moviesList" :key="movie.id">
+                    <h2>Movies</h2>
+                    <MovieCard :movie="movie"></MovieCard>
+
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="movie in moviesList" :key="movie.id">
+                    <h2>Series </h2>
                     <MovieCard :movie="movie"></MovieCard>
 
                 </li>

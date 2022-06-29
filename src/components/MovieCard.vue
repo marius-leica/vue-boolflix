@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div>{{ movie.title }} <span>
                 <lang-flag :iso="movie.original_language" squared="false" />
             </span></div>
