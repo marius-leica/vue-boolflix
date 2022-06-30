@@ -1,23 +1,23 @@
 <template>
-    <div>
-        <div id="moviesList">
-            <ul class="list-group">
-                <h2>Movies</h2>
-                <li class="list-group-item" v-for="movie in moviesList" :key="movie.id">
+
+    <div class=" flex-grow-1">
+        <div id="moviesList" class="pt-5">
+            <div class="row row-cols-3 g-5">
+                <div class="col text-center" v-for="movie in moviesList" :key="movie.id">
                     <MovieCard :movie="movie"></MovieCard>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
 
-        <div id="seriesList">
-            <ul class="list-group">
-                <h2>Series </h2>
-                <li class="list-group-item" v-for="movie in seriesList" :key="movie.id">
+        <div id="seriesList" class="pt-5">
+            <div class="row row-cols-3 g-5">
+                <div class="col text-center" v-for="movie in seriesList" :key="movie.id">
                     <MovieCard :movie="movie"></MovieCard>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -73,5 +73,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang>
 </style>

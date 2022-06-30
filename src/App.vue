@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <TheHeader @searchChanged="search"></TheHeader>
-
-    <TheMain :userInput="searchText"></TheMain>
+    <div class="container overflow-auto">
+      <TheMain :userInput="searchText"></TheMain>
+    </div>
   </div>
 </template>
 
@@ -31,5 +32,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/scss/main";
+@import "assets/scss/main.scss";
 </style>
